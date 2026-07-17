@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alive Group of Business</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="container">
+
+            <div class="logo">
+
+                <h2>ALIVE GROUP OF BUSINESS</h2>
+
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                ☰
+            </div>
+            <nav id="navbar">
+
+                <ul>
+
+                    <li><a href="#home">Home</a></li>
+
+                    <li><a href="#about">About</a></li>
+
+                    <li><a href="#features">Why Us</a></li>
+
+                    <li><a href="#search">Products</a></li>
+
+                    <li><a href="#contact">Contact</a></li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- ================= HERO ================= -->
+
+    <section id="home" class="hero">
+
+        <div class="overlay"></div>
+
+        <div class="container">
+            <div class="hero-content">
+
+                <h1>
+
+                    PRECISION GLASSWARE<br>
+
+                    FOR LABORATORIES
+
+                </h1>
+
+                <p>
+
+                    Supplying premium laboratory glassware for research,
+                    education and industrial applications.
+
+                </p>
+
+                <a href="#search" class="btn">
+
+                    Search Product
+
+                </a>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about" class="about">
+
+        <div class="container about-grid">
+
+            <div class="about-image">
+
+                <img src="images/lab1.png" alt="Alive Group">
+
+            </div>
+
+            <div class="about-text">
+
+                <h2>
+
+                    EXCELLENCE IN LABORATORY GLASSWARE
+
+                </h2>
+
+                <p>
+
+                    Alive Group is committed to manufacturing and supplying
+                    high-quality laboratory glassware with precision,
+                    durability and international quality standards.
+
+                </p>
+
+                <p>
+
+                    Our products are trusted by laboratories,
+                    educational institutes, pharmaceutical companies,
+                    chemical industries and research organizations.
+
+                </p>
+
+                <p>
+
+                    Every product undergoes strict quality inspection,
+                    ensuring outstanding reliability and long service life.
+
+                </p>
+
+                <a href="#features" class="btn2">
+
+                    Learn More
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FEATURES ================= -->
+
+    <section id="features" class="features">
+
+        <div class="container">
+
+            <h2>
+
+                WHY CHOOSE ALIVE GROUP
+
+            </h2>
+
+            <p class="subtitle">
+
+                Trusted by laboratories across India.
+
+            </p>
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <img src="images/quality.png">
+
+                    <h3>
+
+                        Unmatched Product Quality
+
+                    </h3>
+
+                    <p>
+
+                        Manufactured using premium raw materials
+                        with rigorous quality inspection to ensure
+                        accuracy and durability.
+
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <img src="images/expert.png">
+
+                    <h3>
+
+                        Expert Industry Knowledge
+
+                    </h3>
+
+                    <p>
+
+                        Our experienced professionals help customers
+                        choose the perfect laboratory glassware
+                        for every application.
+
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <img src="images/support.png">
+
+                    <h3>
+
+                        Dedicated Customer Support
+
+                    </h3>
+
+                    <p>
+
+                        Our support team provides prompt assistance,
+                        technical guidance and complete customer
+                        satisfaction.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= product-category ================= -->
+    <section class="product-category-section">
+
+        <div class="container">
+
+            <h2 class="section-title">Browse Main Product Categories</h2>
+
+            <p class="section-subtitle">
+                Search any laboratory product or select a category below.
+            </p>
+
+            <div class="category-grid">
+
+                <div class="category-card" onclick="searchCategory('adapters')">Adapters</div>
+                <div class="category-card" onclick="searchCategory('Beakers')">Beakers</div>
+
+
+                <div class="category-card" onclick="searchCategory('bottles')">
+                    BOTTLES
+                </div>
+
+                <div class="category-card" onclick="searchCategory('burettes')">
+                    BURETTES
+                </div>
+
+                <div class="category-card" onclick="searchCategory('Funnels')">
+                    Funnels
+                </div>
+
+                <div class="category-card" onclick="searchCategory('Test Tubes')">
+                    Test Tubes
+                </div>
+
+                <div class="category-card" onclick="searchCategory('COLUMNS')">
+                    COLUMNS
+                </div>
+
+                <div class="category-card" onclick="searchCategory('SEAL TUBES')">SEAL TUBES</div>
+                <div class="category-card" onclick="searchCategory('CHROMATIGRAPHY')">CHROMATIGRAPHY</div>
+                <div class="category-card" onclick="searchCategory('CONDENSERS')">CONDENSERS</div>
+                <div class="category-card" onclick="searchCategory('CYLINDERS')">CYLINDERS</div>
+                <div class="category-card" onclick="searchCategory('DISHES')">DISHES</div>
+                <div class="category-card" onclick="searchCategory('EXTRACTORS')">EXTRACTORS</div>
+                <div class="category-card" onclick="searchCategory('FLASKS')">FLASKS</div>
+                <div class="category-card" onclick="searchCategory('PIPETTES')">PIPETTES</div>
+                <div class="category-card" onclick="searchCategory('STIRRERS')">STIRRERS</div>
+                <div class="category-card" onclick="searchCategory('STOPERS')">STOPERS</div>
+                <div class="category-card" onclick="searchCategory('TEST TUBES')">TEST TUBES</div>
+                <div class="category-card" onclick="searchCategory('TUBES')">TUBES</div>
+                <div class="category-card" onclick="searchCategory('DEAN & STARK RECEIVERS')">DEAN & STARK RECEIVERS</div>
+                <div class="category-card" onclick="searchCategory('RECEIVERS - CLEVENGER')">RECEIVERS - CLEVENGER</div>
+                <div class="category-card" onclick="searchCategory('SINTERED GLASSWARE')">SINTERED GLASSWARE</div>
+                <div class="category-card" onclick="searchCategory('JACKETED REACTORS')">JACKETED REACTORS</div>
+                <div class="category-card" onclick="searchCategory('VACUUME GAUGES')">VACUUME GAUGES</div>
+                <div class="category-card" onclick="searchCategory('STANDARD APPARATUS')">STANDARD APPARATUS</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Existing Search Section -->
+    <!-- ================= product-category ================= -->
+    <!-- ================= PRODUCT SEARCH STARTS IN PART 2 ================= -->
+    <!-- ================= PRODUCT SEARCH ================= -->
+
+    <section id="search" class="product-search">
+
+        <div class="container">
+
+
+            <p class="subtitle">
+                Search any laboratory product.
+            </p>
+
+            <div class="search-box">
+
+                <input type="text"
+                       id="searchInput"
+                       placeholder="Search Product Name..."
+                       autocomplete="off">
+
+                <button id="searchBtn">
+                    Search
+                </button>
+
+                <div id="suggestions"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= PDF POPUP ================= -->
+
+    <div id="pdfModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close">&times;</span>
+
+            <iframe id="pdfViewer"
+                    src=""
+                    frameborder="0">
+            </iframe>
+
+        </div>
+
+    </div>
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact" class="contact">
+
+        <div class="container">
+
+            <h2>CONTACT US</h2>
+
+            <p class="subtitle">
+                We are always ready to help you with your laboratory requirements.
+            </p>
+
+            <div class="contact-grid">
+
+                <div class="contact-card">
+
+                    <h3>Address</h3>
+
+                    <p>
+                        Alive Group of Business<br>
+                        Ahmedabad, Gujarat<br>
+                        India
+                    </p>
+
+                </div>
+
+                <div class="contact-card">
+
+                    <h3>Email</h3>
+
+                    <p>
+
+                        info@alivegroup.com
+
+                    </p>
+
+                </div>
+
+                <div class="contact-card">
+
+                    <h3>Phone</h3>
+
+                    <p>
+
+                        +91 XXXXX XXXXX
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-logo">
+
+                <h2>ALIVE GROUP OF BUSINESS</h2>
+
+            </div>
+
+            <p>
+
+                Precision Laboratory Glassware Manufacturer & Supplier
+
+            </p>
+
+            <hr>
+
+            <p>
+
+                © 2026 Alive Group of Business. All Rights Reserved.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- Scroll To Top -->
+
+    <button id="topBtn">
+
+        ↑
+
+    </button>
+
+    <!-- JavaScript -->
+
+
+    <script src="js/script.js"></script>
+    <script>
+        // ===============================
+        // Alive Group Product Search
+        // ===============================
+        const products = [
+
+
+            { name: "ADAPTERS", page: 2 },
+            { name: "ADAPTERS - EXPANSION", page: 2 },
+            { name: "ADAPTERS - REDUCERS", page: 2 },
+            { name: "ADAPTERS - TWO WAY PARALLEL", page: 3 },
+            { name: "ADAPTER - CONE TO RUBBER TUBING", page: 3 },
+            { name: "ADAPTER - CONE WITH GLASS STOPCOCK", page: 4 },
+            { name: "ADAPTER - VACUUM RELEASE STOPCOCK (ONE WAY)", page: 4 },
+            { name: "ADAPTER - VACUUM RELEASE & CONTROL STOPCOCK", page: 4 },
+            { name: "ADAPTER - RECOVERY PLAIN BEND SLOPPING", page: 5 },
+            { name: "ADAPTER - RECOVERY STILL HEAD", page: 5 },
+            { name: "ADAPTER - RECOVERY CLAISENHEAD SLOPPING", page: 6 },
+            { name: "THERMOMETER POCKET (SHORT) FOR STILL HEAD/CLAISENHEAD", page: 6 },
+
+            { name: "ADAPTER - RECOVERY SPLASH HEAD SLOPPING", page: 7 },
+            { name: "ADAPTER - RECOVERY SPLASH HEAD VERTICAL", page: 7 },
+
+            { name: "ADAPTER - RECEIVER PLAIN BEND SHORT/LONG ", page: 8 },
+            { name: "ADAPTER - RECEIVER BEND WITH VACUUM CONNECTION", page: 8 },
+            { name: "ADAPTER - RECEIVER BEND WITH MULTIPLE CONNECTION (PIG) ", page: 8 },
+
+            { name: "ADAPTER - RECEIVER MULTI-LIMB WITH VACUUM CONNECTION ", page: 9 },
+            {
+                name: "RECEIVER ADAPTER FOR MULTI-LIMB SLOPPING DELIVERY"
+                , page: 9
+            },
+            {
+                name: "ADAPTER - INTERMEDIATE RECIVER PERKIN"
+                , page: 9
+            },
+            { name: "BEAKERS", page: 13 },
+            { name: "BOTTLES", page: 14 },
+
+            { name: "BURETTES", page: 20 },
+            { name: "SEAL TUBES", page: 23 },
+            { name: "COLUMNS", page: 24 },
+            { name: "CHROMATIGRAPHY", page: 39},
+            { name: "CONDENSERS", page: 41 },
+            { name: "CYLINDERS", page: 46 },
+            { name: "DISHES", page: 50 },
+            { name: "DEAN & STARK RECEIVERS", page: 51 },
+            { name: "RECEIVERS - CLEVENGER", page: 52 },
+            { name: "EXTRACTORS", page: 53 },
+            { name: "FLASKS", page: 56 },
+            { name: "FUNNELS", page: 72 },
+            { name: "JACKETED REACTORS", page: 79 },
+            { name: "PIPETTES", page: 82 },
+            { name: "STIRRERS", page: 87 },
+            { name: "STOPERS", page: 85 },
+            { name: "SINTERED GLASSWARE", page: 89 },
+            { name: "TEST TUBES", page: 92 },
+            { name: "TUBES", page: 94 },
+            { name: "VACUUME GAUGES", page: 97 },
+            { name: "STANDARD APPARATUS", page: 98 },
+            //{ name: "xyz", page: 52 }
+            //{ name: "Socket, 16A", page: 32 },
+            //{ name: 'PVC Pipe (3")', page: 5 },
+
+        ];
+
+        const input = document.getElementById("searchInput");
+        const button = document.getElementById("searchBtn");
+        const suggestions = document.getElementById("suggestions");
+
+        const modal = document.getElementById("pdfModal");
+        const pdfViewer = document.getElementById("pdfViewer");
+        const closeBtn = document.querySelector(".close");
+
+        // ===============================
+        // Live Search
+        // ===============================
+
+        function showSuggestions(keyword) {
+
+            suggestions.innerHTML = "";
+
+            if (keyword.length === 0) {
+                suggestions.style.display = "none";
+                return;
+            }
+
+            const result = products.filter(product =>
+                product.name.toLowerCase().includes(keyword.toLowerCase())
+            );
+
+            if (result.length === 0) {
+
+                suggestions.style.display = "none";
+                return;
+
+            }
+
+            suggestions.style.display = "block";
+
+            result.forEach(product => {
+
+                const div = document.createElement("div");
+
+                div.innerHTML = product.name;
+
+                div.onclick = function () {
+
+                    input.value = product.name;
+
+                    suggestions.style.display = "none";
+
+                    openPDF(product.page);
+
+                };
+
+                suggestions.appendChild(div);
+
+            });
+
+        }
+
+        // ===============================
+        // Search Input
+        // ===============================
+
+        input.addEventListener("keyup", function () {
+
+            showSuggestions(this.value);
+
+        });
+
+        // ===============================
+        // Search Button
+        // ===============================
+
+        button.addEventListener("click", function () {
+
+            searchProduct();
+
+        });
+
+        // ===============================
+        // Enter Key
+        // ===============================
+
+        input.addEventListener("keypress", function (e) {
+
+            if (e.key === "Enter") {
+
+                searchProduct();
+
+            }
+
+        });
+
+        // ===============================
+        // Search Product
+        // ===============================
+
+        function searchProduct() {
+            debugger
+            let keyword = input.value.trim().toLowerCase();
+
+            if (keyword === "") {
+
+                alert("Please enter product name.");
+
+                return;
+
+            }
+
+            const product = products.find(p =>
+                p.name.toLowerCase() === keyword
+            );
+
+            if (!product) {
+
+                alert("Product not found.");
+
+                return;
+
+            }
+
+            openPDF(product.page);
+
+        }
+
+        // ===============================
+        // Open PDF Popup
+        // ===============================
+
+        function openPDF(page) {
+
+            pdfViewer.src = "catalog.pdf#page=" + page;
+
+            modal.style.display = "block";
+
+        }
+
+        // ===============================
+        // Close Popup
+        // ===============================
+
+        closeBtn.onclick = function () {
+
+            modal.style.display = "none";
+
+            pdfViewer.src = "";
+
+        };
+
+        window.onclick = function (e) {
+
+            if (e.target === modal) {
+
+                modal.style.display = "none";
+
+                pdfViewer.src = "";
+
+            }
+
+        };
+
+        // ===============================
+        // Hide Suggestions
+        // ===============================
+
+        document.addEventListener("click", function (e) {
+
+            if (!e.target.closest(".search-box")) {
+
+                suggestions.style.display = "none";
+
+            }
+
+        });
+
+        // ===============================
+        // Scroll To Top
+        // ===============================
+
+        const topBtn = document.getElementById("topBtn");
+
+        window.addEventListener("scroll", function () {
+
+            if (window.pageYOffset > 300) {
+
+                topBtn.style.display = "block";
+
+            } else {
+
+                topBtn.style.display = "none";
+
+            }
+
+        });
+
+        topBtn.addEventListener("click", function () {
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        });
+
+        // ===============================
+        // Navbar Active Link
+        // ===============================
+
+        const links = document.querySelectorAll("nav a");
+
+        links.forEach(link => {
+
+            link.addEventListener("click", function () {
+
+                links.forEach(l => l.classList.remove("active"));
+
+                this.classList.add("active");
+
+            });
+
+        });
+
+        // ===============================
+        // Header Shadow
+        // ===============================
+
+        window.addEventListener("scroll", function () {
+
+            const header = document.querySelector("header");
+
+            if (window.scrollY > 20) {
+
+                header.style.boxShadow = "0 5px 20px rgba(0,0,0,.15)";
+
+            } else {
+
+                header.style.boxShadow = "0 3px 10px rgba(0,0,0,.08)";
+
+            }
+
+        });
+
+        // ===============================
+        // Image Fade Animation
+        // ===============================
+
+        const observer = new IntersectionObserver(entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("show");
+
+                }
+
+            });
+
+        });
+
+        document.querySelectorAll(".card,.about-image,.contact-card").forEach(el => {
+
+            observer.observe(el);
+
+        });
+
+        // ===============================
+        // Loading Complete
+        // ===============================
+
+        window.onload = function () {
+
+            console.log("Alive Group Website Loaded Successfully.");
+
+        };
+    </script>
+
+    <!--// Mobile Menu-->
+    <script>
+
+        const menuToggle = document.getElementById("menuToggle");
+        const navbar = document.getElementById("navbar");
+
+        menuToggle.onclick = function () {
+
+            navbar.classList.toggle("active");
+
+            if (navbar.classList.contains("active")) {
+
+                menuToggle.innerHTML = "✕";
+
+            } else {
+
+                menuToggle.innerHTML = "☰";
+
+            }
+
+        };
+
+
+        // Close menu after click
+
+        document.querySelectorAll("#navbar a").forEach(link => {
+
+            link.onclick = function () {
+
+                navbar.classList.remove("active");
+
+                menuToggle.innerHTML = "☰";
+
+            };
+
+        });
+    </script>
+
+    <!--searchCategory-->
+    <script>
+        function searchCategory(productName) {
+
+            // Put the category into the search box
+            document.getElementById("searchInput").value = productName;
+
+            // Call the existing search function
+            searchProduct();
+
+        }
+    </script>
+</body>
+
+
+
+</html>
