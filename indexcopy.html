@@ -241,8 +241,8 @@
 
             <div class="category-grid">
 
-                <div class="category-card sub-category" onclick="searchCategory('adapters')">Adapters</div>
-                <div class="category-card sub-category" onclick="searchCategory('Beakers')">Beakers</div>
+                <div class="category-card" onclick="searchCategory('adapters')">Adapters</div>
+                <div class="category-card" onclick="searchCategory('Beakers')">Beakers</div>
 
 
                 <div class="category-card" onclick="searchCategory('bottles')">
@@ -413,28 +413,6 @@
 
     </section>
 
-    <!-- ================= categoryPopup ================= -->
-    <!-- Category Popup -->
-
-    <div id="categoryPopup" class="category-popup">
-
-        <div class="popup-box">
-
-            <div class="popup-header">
-
-                <h2 id="popupTitle"></h2>
-
-                <span id="closePopup">&times;</span>
-
-            </div>
-
-            <div id="subProductList">
-
-            </div>
-
-        </div>
-
-    </div>
     <!-- ================= FOOTER ================= -->
 
     <footer>
@@ -868,84 +846,6 @@
             searchProduct();
 
         }
-    </script>
-    <script>
-    const data = {
-
-         "Adapters":[
- "A01 14/10 - Adapters - Reduction with I/C Joints, cone B-14, socket B-10",
- "A01 19/14	Adapters - Reduction with I/C Joints, cone B-19, socket B-14",
- ],
-    "Beakers":[
-    "B01 5	Beakers - with Spout, 5ml",
-    "B01 10	Beakers - with Spout, 10ml",
-    "B01 10000	Beakers - with Spout, 10000ml",
-    ],
-
-    "Funnels":[
-    "Filter Funnel",
-    "Powder Funnel",
-    "Long Stem Funnel"
-    ],
-
-    "BOTTLES":[
-    "Reagent Bottle",
-    "Dropping Bottle",
-    "Amber Bottle"
-    ]
-
-    };
-
-    const popup=document.getElementById("categoryPopup");
-
-    const title=document.getElementById("popupTitle");
-
-    const list=document.getElementById("subProductList");
-
-    document.querySelectorAll(".sub-category").forEach(card=>{
-
-    card.onclick=function(){
-        debugger
-    let category=this.textContent.trim();
-    console.log(category);
-    title.innerHTML=category;
-
-    list.innerHTML="";
-
-    if(data[category]){
-
-    data[category].forEach(item=>{
-
-    list.innerHTML+=`
-    <div class="sub-item">
-        ${item}
-    </div>`;
-
-    });
-
-    }
-
-    popup.style.display="block";
-
-    }
-
-    });
-
-    document.getElementById("closePopup").onclick=function(){
-
-    popup.style.display="none";
-
-    };
-
-    window.onclick=function(e){
-
-    if(e.target==popup){
-
-    popup.style.display="none";
-
-    }
-
-    };
     </script>
 </body>
 
