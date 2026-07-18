@@ -245,7 +245,7 @@
                 <div class="category-card sub-category" onclick="searchCategory('Beakers')">Beakers</div>
 
 
-                <div class="category-card" onclick="searchCategory('bottles')">
+                <div class="category-card sub-category" onclick="searchCategory('bottles')">
                     BOTTLES
                 </div>
 
@@ -301,7 +301,7 @@
 
 
             <p class="subtitle">
-                Search any laboratory product.
+                Search for any laboratory product from the catalog.
             </p>
 
             <div class="search-box">
@@ -496,23 +496,14 @@
             { name: "ADAPTER - RECOVERY STILL HEAD", page: 5 },
             { name: "ADAPTER - RECOVERY CLAISENHEAD SLOPPING", page: 6 },
             { name: "THERMOMETER POCKET (SHORT) FOR STILL HEAD/CLAISENHEAD", page: 6 },
-
             { name: "ADAPTER - RECOVERY SPLASH HEAD SLOPPING", page: 7 },
             { name: "ADAPTER - RECOVERY SPLASH HEAD VERTICAL", page: 7 },
-
             { name: "ADAPTER - RECEIVER PLAIN BEND SHORT/LONG ", page: 8 },
             { name: "ADAPTER - RECEIVER BEND WITH VACUUM CONNECTION", page: 8 },
             { name: "ADAPTER - RECEIVER BEND WITH MULTIPLE CONNECTION (PIG) ", page: 8 },
-
             { name: "ADAPTER - RECEIVER MULTI-LIMB WITH VACUUM CONNECTION ", page: 9 },
-            {
-                name: "RECEIVER ADAPTER FOR MULTI-LIMB SLOPPING DELIVERY"
-                , page: 9
-            },
-            {
-                name: "ADAPTER - INTERMEDIATE RECIVER PERKIN"
-                , page: 9
-            },
+            { name: "RECEIVER ADAPTER FOR MULTI-LIMB SLOPPING DELIVERY" , page: 9 },
+            { name: "ADAPTER - INTERMEDIATE RECIVER PERKIN" , page: 9 },
             { name: "BEAKERS", page: 13 },
             { name: "BOTTLES", page: 14 },
 
@@ -586,10 +577,12 @@
                 div.onclick = function () {
 
                     input.value = product.name;
+                    if (input.value)
+                        input.value = input.value.trim().toLowerCase()
 
                     suggestions.style.display = "none";
-
-                    openPDF(product.page);
+                    debugger
+                    openPDF(product.page, input.value);
 
                 };
 
@@ -659,8 +652,7 @@
                 return;
 
             }
-
-            openPDF(product.page);
+            openPDF(product.page, product.name);
 
         }
 
@@ -668,7 +660,14 @@
         // Open PDF Popup
         // ===============================
 
-        function openPDF(page) {
+        function openPDF(page, catalog) {
+            if (catalog && catalog.includes("adapter"))
+            {
+              pdfViewer.src = "adaptercatalog.pdf#page=" + page;
+            }
+            else{
+             pdfViewer.src = "catalog.pdf#page=" + page;
+            }
 
             pdfViewer.src = "catalog.pdf#page=" + page;
 
@@ -873,27 +872,63 @@
     const data = {
 
          "Adapters":[
- "A01 14/10 - Adapters - Reduction with I/C Joints, cone B-14, socket B-10",
- "A01 19/14	Adapters - Reduction with I/C Joints, cone B-19, socket B-14",
- ],
-    "Beakers":[
-    "B01 5	Beakers - with Spout, 5ml",
-    "B01 10	Beakers - with Spout, 10ml",
-    "B01 10000	Beakers - with Spout, 10000ml",
-    ],
+            "ADAPTERS - EXPANSION",
+            "ADAPTERS - REDUCERS",
+            "ADAPTERS - TWO WAY PARALLEL",
+            "ADAPTER - CONE TO RUBBER TUBING",
+            "ADAPTER - CONE WITH GLASS STOPCOCK",
+            "ADAPTER - VACUUM RELEASE STOPCOCK(ONE WAY)",
+            "ADAPTER - VACUUM RELEASE & CONTROL STOPCOCK",
+            "ADAPTER - RECOVERY PLAIN BEND SLOPPING",
+            "ADAPTER - RECOVERY STILL HEAD",
+            "ADAPTER - RECOVERY CLAISENHEAD SLOPPING",
+            "THERMOMETER POCKET(SHORT) FOR STILL HEAD / CLAISENHEAD",
+            "ADAPTER - RECOVERY SPLASH HEAD SLOPPING",
+            "ADAPTER - RECOVERY SPLASH HEAD VERTICAL",
+            "ADAPTER - RECEIVER PLAIN BEND SHORT / LONG", 
+            "ADAPTER - RECEIVER BEND WITH VACUUM CONNECTION",
+            "ADAPTER - RECEIVER BEND WITH MULTIPLE CONNECTION(PIG)", 
+            "ADAPTER - RECEIVER MULTI - LIMB WITH VACUUM CONNECTION", 
+            "RECEIVER ADAPTER FOR MULTI - LIMB SLOPPING DELIVERY",
+            "ADAPTER - INTERMEDIATE RECIVER PERKIN"
+        ],
+        "Beakers": [
+            "BEAKERS - LOW FORM WITH SPOUT GRADUATED",
+        ],
+             "BOTTLES":[
+                 "BOTTLES - REAGENT, NARROW MOUTH WITH FLAT HEAD STOPPER, AMBERGLASS",
+                 "BOTTLE - REAGENT, WIDE MOUTH WITH SCREW CAP,CLEAR GLASS",
+                 "BOTTLE - REAGENT, WIDE MOUTH WITH SCREW CAP,AMBER GLASS",
+                 "BOTTLE - ASPIRATOR, WITH OUTLET FOR RUBBER TUBING, WITHOUT STOPPER",
+                 "BOTTLE - ASPIRATOR, WITH STOPCOCK AND GLASS STOPPER, CLEAR GLASS",
+                 "BOTTLE : B.O.D BOTTLE WITH STOPPER (HEAVY WALL)",
+                 "BOTTLE - RELATIVE DENSITY ( SPECIFIC GRAVITY ) WITH PTFE STOPPER, CLASS - B",
+                 "BOTTLE - WEIGHING - WITH INTERCHANGEABLE STOPPER",
+                 "BOTTLE - SPECIFIC GRAVITY, WITH THERMOMETER (PYKNOMETER), CLASS - B",
+                 "DROPPING BOTTLE WITH INTERCHANGEABLE DROPPER & RUBBER TEAT, CLEAR GLASS",
+                 "DROPPING BOTTLE WITH INTERCHANGEABLE DROPPER & RUBBER TEAT, AMBER GLASS",
+                 "GAS WASHING BOTTLE WITH INTERCHANGEABLE STOPPER USING F.B.FLASK",
+                 "GAS WASHING BOTTLE WITH INTERCHANGEABLE STOPPER USING F.B.FLASK",
+                 "STOPPER (TRAP HEADS) ONLY FOR GAS WASHING BOTTLE",
+                 "BOTTLE - GAS WASHING WITH INTERCHANGEABLE STOPPER USING BOTTLES",
+                 "STOPPERS ONLY FOR GAS WASHING BOTTLES (TRAP HEAD)",
+                 "BOTTLES - GAS BUBBLING ( SEALED TRAP - ONE PIECE )",
+                 "BOTTLES - IMPINGERS - GRADUATED,FOR AIR SAMPLING",
+                 "BOTTLES - GAS BUBBLING ( SEALED TRAP - ONE PIECE )",
+                 "BOTTLES - GAS BUBBLING ( SEALED TRAP - ONE PIECE )",
+            ],
+        "SEAL TUBES": [
+            "SEAL TUBE WITH PTFE STOPPER",
+        ],
+        "COLUMNS": [
+            "SEAL TUBE WITH PTFE STOPPER",
+        ],
 
     "Funnels":[
     "Filter Funnel",
     "Powder Funnel",
     "Long Stem Funnel"
     ],
-
-    "BOTTLES":[
-    "Reagent Bottle",
-    "Dropping Bottle",
-    "Amber Bottle"
-    ]
-
     };
 
     const popup=document.getElementById("categoryPopup");
