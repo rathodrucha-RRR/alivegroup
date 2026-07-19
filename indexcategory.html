@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alive Group of Business</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .main-container {
+            display: flex;
+            width: 100%;
+            height: calc(100vh - 90px); /* adjust according to header */
+            overflow: hidden;
+        }
+
+        /* Left Panel */
+        .left-panel {
+            width: 32%;
+            min-width: 320px;
+            max-width: 550px;
+            border-right: 1px solid #ddd;
+            background: #fff;
+        }
+
+        /* Product List */
+        #productList {
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        /* Right Panel */
+        .right-panel {
+            flex: 1; /* Takes all remaining width */
+            height: 100%;
+            background: #f5f5f5;
+        }
+
+        .pdf-container {
+            flex: 1;
+            width: auto;
+        }
+
+        #pdfViewer1 {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="container">
+
+            <div class="logo">
+
+                <h2>ALIVE GROUP OF BUSINESS</h2>
+
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                ☰
+            </div>
+            <nav id="navbar">
+
+                <ul>
+
+                    <li><a href="#home">Home</a></li>
+
+                    <li><a href="#about">About</a></li>
+
+                    <li><a href="#features">Why Us</a></li>
+
+                    <li><a href="#search">Products</a></li>
+
+                    <li><a href="#contact">Contact</a></li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <!-- ================= product-category ================= -->
+    <section class="product-category-section">
+
+        <div class="container">
+
+            <h2 class="section-title">Browse Main Product Categories</h2>
+
+            <p class="section-subtitle">
+                Search any laboratory product or select a category below.
+            </p>
+
+            <div class="category-grid">
+
+                <div class="category-card sub-category" onclick="searchCategory('adapters')">Adapters</div>
+                <div class="category-card sub-category" onclick="searchCategory('Beakers')">Beakers</div>
+
+
+                <div class="category-card sub-categoryy" onclick="searchCategory('bottles')">
+                    BOTTLES
+                </div>
+
+                <div class="category-card" onclick="searchCategory('burettes')">
+                    BURETTES
+                </div>
+
+                <div class="category-card" onclick="searchCategory('Funnels')">
+                    Funnels
+                </div>
+
+                <div class="category-card" onclick="searchCategory('Test Tubes')">
+                    Test Tubes
+                </div>
+
+                <div class="category-card" onclick="searchCategory('COLUMNS')">
+                    COLUMNS
+                </div>
+
+                <div class="category-card" onclick="searchCategory('SEAL TUBES')">SEAL TUBES</div>
+                <div class="category-card" onclick="searchCategory('CHROMATIGRAPHY')">CHROMATIGRAPHY</div>
+                <div class="category-card" onclick="searchCategory('CONDENSERS')">CONDENSERS</div>
+                <div class="category-card" onclick="searchCategory('CYLINDERS')">CYLINDERS</div>
+                <div class="category-card" onclick="searchCategory('DISHES')">DISHES</div>
+                <div class="category-card" onclick="searchCategory('EXTRACTORS')">EXTRACTORS</div>
+                <div class="category-card" onclick="searchCategory('FLASKS')">FLASKS</div>
+                <div class="category-card" onclick="searchCategory('PIPETTES')">PIPETTES</div>
+                <div class="category-card" onclick="searchCategory('STIRRERS')">STIRRERS</div>
+                <div class="category-card" onclick="searchCategory('STOPERS')">STOPERS</div>
+                <div class="category-card" onclick="searchCategory('TUBES')">TUBES</div>
+                <div class="category-card" onclick="searchCategory('TEST TUBES')">TEST TUBES</div>
+                <div class="category-card" onclick="searchCategory('DEAN & STARK RECEIVERS')">DEAN & STARK RECEIVERS</div>
+                <div class="category-card" onclick="searchCategory('RECEIVERS - CLEVENGER')">RECEIVERS - CLEVENGER</div>
+                <div class="category-card" onclick="searchCategory('SINTERED GLASSWARE')">SINTERED GLASSWARE</div>
+                <div class="category-card" onclick="searchCategory('JACKETED REACTORS')">JACKETED REACTORS</div>
+                <div class="category-card" onclick="searchCategory('VACUUME GAUGES')">VACUUME GAUGES</div>
+                <div class="category-card" onclick="searchCategory('STANDARD APPARATUS')">STANDARD APPARATUS</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Existing Search Section -->
+    <!-- ================= product-category ================= -->
+    <!-- ================= PRODUCT SEARCH STARTS IN PART 2 ================= -->
+    <!-- ================= PRODUCT SEARCH ================= -->
+
+    <section id="search" class="product-search">
+
+        <div class="container">
+
+
+            <p class="subtitle">
+                Search for any laboratory product from the catalog.
+            </p>
+
+            <div class="search-box">
+
+                <input type="text"
+                       id="searchInput"
+                       placeholder="Search Product Name..."
+                       autocomplete="off">
+
+                <button id="searchBtn">
+                    Search
+                </button>
+
+                <div id="suggestions"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= PDF POPUP ================= -->
+
+    <div id="pdfModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close">&times;</span>
+
+            <iframe id="pdfViewer"
+                    src=""
+                    frameborder="0">
+            </iframe>
+
+        </div>
+
+    </div>
+
+    <!-- ================= CONTACT ================= -->
+    <!-- ================= categoryPopup ================= -->
+    <!-- Category Popup -->
+
+    <div id="categoryPopup" class="category-popup">
+
+        <div class="popup-box">
+
+            <div class="popup-header">
+
+                <h2 id="popupTitle"></h2>
+
+                <span id="closePopup">&times;</span>
+
+            </div>
+            <div class="main-container">
+
+                <!-- Left Product List -->
+                <div class="left-panel">
+                    <div id="subProductList"></div>
+                </div>
+
+                <!-- Right PDF -->
+                <div class="right-panel">
+                    <!--<iframe id="pdfViewer1"></iframe>-->
+                    <iframe id="pdfViewer1"
+                            src="pdfjs/web/viewer.html?file=catalog.pdf"
+                            width="100%"
+                            height="100%">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-logo">
+
+                <h2>ALIVE GROUP OF BUSINESS</h2>
+            </div>
+
+            <p>
+                Precision Laboratory Glassware Supplier
+            </p>
+
+            <hr>
+
+            <p>
+                © 2026 Alive Group of Business. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- Scroll To Top -->
+
+    <button id="topBtn">
+
+        ↑
+
+    </button>
+
+    <!-- JavaScript -->
+
+
+    <script src="js/script.js"></script>
+    <script>
+        // ===============================
+        // Alive Group Product Search
+        // ===============================
+        const products = [
+
+
+            { name: "ADAPTERS", page: 2 },
+            { name: "ADAPTERS - EXPANSION", page: 2 },
+            { name: "ADAPTERS - REDUCERS", page: 2 },
+            { name: "ADAPTERS - TWO WAY PARALLEL", page: 3 },
+            { name: "ADAPTER - CONE TO RUBBER TUBING", page: 3 },
+            { name: "ADAPTER - CONE WITH GLASS STOPCOCK", page: 4 },
+            { name: "ADAPTER - VACUUM RELEASE STOPCOCK (ONE WAY)", page: 4 },
+            { name: "ADAPTER - VACUUM RELEASE & CONTROL STOPCOCK", page: 4 },
+            { name: "ADAPTER - RECOVERY PLAIN BEND SLOPPING", page: 5 },
+            { name: "ADAPTER - RECOVERY STILL HEAD", page: 5 },
+            { name: "ADAPTER - RECOVERY CLAISENHEAD SLOPPING", page: 6 },
+            { name: "THERMOMETER POCKET (SHORT) FOR STILL HEAD/CLAISENHEAD", page: 6 },
+            { name: "ADAPTER - RECOVERY SPLASH HEAD SLOPPING", page: 7 },
+            { name: "ADAPTER - RECOVERY SPLASH HEAD VERTICAL", page: 7 },
+            { name: "ADAPTER - RECEIVER PLAIN BEND SHORT/LONG ", page: 8 },
+            { name: "ADAPTER - RECEIVER BEND WITH VACUUM CONNECTION", page: 8 },
+            { name: "ADAPTER - RECEIVER BEND WITH MULTIPLE CONNECTION (PIG) ", page: 8 },
+            { name: "ADAPTER - RECEIVER MULTI-LIMB WITH VACUUM CONNECTION ", page: 9 },
+            { name: "RECEIVER ADAPTER FOR MULTI-LIMB SLOPPING DELIVERY", page: 9 },
+            { name: "ADAPTER - INTERMEDIATE RECIVER PERKIN", page: 9 },
+            { name: "BEAKERS", page: 13 },
+            { name: "BOTTLES", page: 14 },
+
+            { name: "BURETTES", page: 20 },
+            { name: "SEAL TUBES", page: 23 },
+            { name: "COLUMNS", page: 24 },
+            { name: "CHROMATIGRAPHY", page: 39 },
+            { name: "CONDENSERS", page: 41 },
+            { name: "CYLINDERS", page: 46 },
+            { name: "DISHES", page: 50 },
+            { name: "DEAN & STARK RECEIVERS", page: 51 },
+            { name: "RECEIVERS - CLEVENGER", page: 52 },
+            { name: "EXTRACTORS", page: 53 },
+            { name: "FLASKS", page: 56 },
+            { name: "FUNNELS", page: 72 },
+            { name: "JACKETED REACTORS", page: 79 },
+            { name: "PIPETTES", page: 82 },
+            { name: "STIRRERS", page: 85 },
+            { name: "STOPERS", page: 87 },
+            { name: "SINTERED GLASSWARE", page: 89 },
+            { name: "TEST TUBES", page: 92 },
+            { name: "TUBES", page: 94 },
+            { name: "VACUUME GAUGES", page: 97 },
+            { name: "STANDARD APPARATUS", page: 98 },
+            //{ name: "xyz", page: 52 }
+            //{ name: "Socket, 16A", page: 32 },
+            //{ name: 'PVC Pipe (3")', page: 5 },
+
+        ];
+
+        const input = document.getElementById("searchInput");
+        const button = document.getElementById("searchBtn");
+        const suggestions = document.getElementById("suggestions");
+
+        const modal = document.getElementById("pdfModal");
+        const pdfViewer = document.getElementById("pdfViewer");
+        const closeBtn = document.querySelector(".close");
+
+        // ===============================
+        // Live Search
+        // ===============================
+
+        function showSuggestions(keyword) {
+
+            suggestions.innerHTML = "";
+
+            if (keyword.length === 0) {
+                suggestions.style.display = "none";
+                return;
+            }
+
+            const result = products.filter(product =>
+                product.name.toLowerCase().includes(keyword.toLowerCase())
+            );
+
+            if (result.length === 0) {
+
+                suggestions.style.display = "none";
+                return;
+
+            }
+
+            suggestions.style.display = "block";
+
+            result.forEach(product => {
+
+                const div = document.createElement("div");
+
+                div.innerHTML = product.name;
+
+                div.onclick = function () {
+
+                    input.value = product.name;
+                    if (input.value)
+                        input.value = input.value.trim().toLowerCase()
+
+                    suggestions.style.display = "none";
+                    debugger
+                    openPDF(product.page, input.value);
+
+                };
+
+                suggestions.appendChild(div);
+
+            });
+
+        }
+
+        // ===============================
+        // Search Input
+        // ===============================
+
+        input.addEventListener("keyup", function () {
+
+            showSuggestions(this.value);
+
+        });
+
+        // ===============================
+        // Search Button
+        // ===============================
+
+        button.addEventListener("click", function () {
+
+            searchProduct();
+
+        });
+
+        // ===============================
+        // Enter Key
+        // ===============================
+
+        input.addEventListener("keypress", function (e) {
+
+            if (e.key === "Enter") {
+
+                searchProduct();
+
+            }
+
+        });
+
+        // ===============================
+        // Search Product
+        // ===============================
+
+        function searchProduct() {
+            debugger
+            let keyword = input.value.trim().toLowerCase();
+
+            if (keyword === "") {
+
+                alert("Please enter product name.");
+
+                return;
+
+            }
+
+            const product = products.find(p =>
+                p.name.toLowerCase() === keyword
+            );
+
+            if (!product) {
+
+                alert("Product not found.");
+                return;
+
+            }
+            openPDF(product.page, product.name);
+
+        }
+
+        // ===============================
+        // Open PDF Popup
+        // ===============================
+
+        function openPDF(page, catalog) {
+            debugger
+            if (catalog && catalog.includes("adapter")) {
+                pdfViewer.src = "adaptercatalog.pdf#page=" + page;
+            }
+            else {
+                pdfViewer.src = "catalog.pdf#page=" + page;
+            }
+
+            //pdfViewer.src = "catalog.pdf#page=" + page;
+
+            modal.style.display = "block";
+
+        }
+
+        // ===============================
+        // Close Popup
+        // ===============================
+
+        closeBtn.onclick = function () {
+
+            modal.style.display = "none";
+
+            pdfViewer.src = "";
+
+        };
+
+        window.onclick = function (e) {
+
+            if (e.target === modal) {
+
+                modal.style.display = "none";
+
+                pdfViewer.src = "";
+
+            }
+
+        };
+
+        // ===============================
+        // Hide Suggestions
+        // ===============================
+
+        document.addEventListener("click", function (e) {
+
+            if (!e.target.closest(".search-box")) {
+
+                suggestions.style.display = "none";
+
+            }
+
+        });
+
+        // ===============================
+        // Scroll To Top
+        // ===============================
+
+        const topBtn = document.getElementById("topBtn");
+
+        window.addEventListener("scroll", function () {
+
+            if (window.pageYOffset > 300) {
+
+                topBtn.style.display = "block";
+
+            } else {
+
+                topBtn.style.display = "none";
+
+            }
+
+        });
+
+        topBtn.addEventListener("click", function () {
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        });
+
+        // ===============================
+        // Navbar Active Link
+        // ===============================
+
+        const links = document.querySelectorAll("nav a");
+
+        links.forEach(link => {
+
+            link.addEventListener("click", function () {
+
+                links.forEach(l => l.classList.remove("active"));
+
+                this.classList.add("active");
+
+            });
+
+        });
+
+        // ===============================
+        // Header Shadow
+        // ===============================
+
+        window.addEventListener("scroll", function () {
+
+            const header = document.querySelector("header");
+
+            if (window.scrollY > 20) {
+
+                header.style.boxShadow = "0 5px 20px rgba(0,0,0,.15)";
+
+            } else {
+
+                header.style.boxShadow = "0 3px 10px rgba(0,0,0,.08)";
+
+            }
+
+        });
+
+        // ===============================
+        // Image Fade Animation
+        // ===============================
+
+        const observer = new IntersectionObserver(entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("show");
+
+                }
+
+            });
+
+        });
+
+        document.querySelectorAll(".card,.about-image,.contact-card").forEach(el => {
+
+            observer.observe(el);
+
+        });
+
+        // ===============================
+        // Loading Complete
+        // ===============================
+
+        window.onload = function () {
+
+            console.log("Alive Group Website Loaded Successfully.");
+
+        };
+    </script>
+
+    <!--// Mobile Menu-->
+    <script>
+
+        const menuToggle = document.getElementById("menuToggle");
+        const navbar = document.getElementById("navbar");
+
+        menuToggle.onclick = function () {
+
+            navbar.classList.toggle("active");
+
+            if (navbar.classList.contains("active")) {
+
+                menuToggle.innerHTML = "✕";
+
+            } else {
+
+                menuToggle.innerHTML = "☰";
+
+            }
+
+        };
+
+
+        // Close menu after click
+
+        document.querySelectorAll("#navbar a").forEach(link => {
+
+            link.onclick = function () {
+
+                navbar.classList.remove("active");
+
+                menuToggle.innerHTML = "☰";
+
+            };
+
+        });
+    </script>
+
+    <!--searchCategory-->
+    <script>
+        function searchCategory(productName) {
+
+            // Put the category into the search box
+            document.getElementById("searchInput").value = productName;
+
+            // Call the existing search function
+            searchProduct();
+
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.js"></script>
+    <script>
+        const data = {
+
+            "Adapters": [
+                "ADAPTERS - EXPANSION",
+                "ADAPTERS - REDUCERS",
+                "ADAPTERS - TWO WAY PARALLEL",
+                "ADAPTER - CONE TO RUBBER TUBING",
+                "ADAPTER - CONE WITH GLASS STOPCOCK",
+                "ADAPTER - VACUUM RELEASE STOPCOCK(ONE WAY)",
+                "ADAPTER - VACUUM RELEASE & CONTROL STOPCOCK",
+                "ADAPTER - RECOVERY PLAIN BEND SLOPPING",
+                "ADAPTER - RECOVERY STILL HEAD",
+                "ADAPTER - RECOVERY CLAISENHEAD SLOPPING",
+                "THERMOMETER POCKET(SHORT) FOR STILL HEAD / CLAISENHEAD",
+                "ADAPTER - RECOVERY SPLASH HEAD SLOPPING",
+                "ADAPTER - RECOVERY SPLASH HEAD VERTICAL",
+                "ADAPTER - RECEIVER PLAIN BEND SHORT / LONG",
+                "ADAPTER - RECEIVER BEND WITH VACUUM CONNECTION",
+                "ADAPTER - RECEIVER BEND WITH MULTIPLE CONNECTION(PIG)",
+                "ADAPTER - RECEIVER MULTI - LIMB WITH VACUUM CONNECTION",
+                "RECEIVER ADAPTER FOR MULTI - LIMB SLOPPING DELIVERY",
+                "ADAPTER - INTERMEDIATE RECIVER PERKIN"
+            ],
+            "Beakers": [
+                "BEAKERS - LOW FORM WITH SPOUT GRADUATED",
+            ],
+            "BOTTLES": [
+                "BOTTLES - REAGENT, NARROW MOUTH WITH FLAT HEAD STOPPER, AMBERGLASS",
+                "BOTTLE - REAGENT, WIDE MOUTH WITH SCREW CAP,CLEAR GLASS",
+                "BOTTLE - REAGENT, WIDE MOUTH WITH SCREW CAP,AMBER GLASS",
+                "BOTTLE - ASPIRATOR, WITH OUTLET FOR RUBBER TUBING, WITHOUT STOPPER",
+                "BOTTLE - ASPIRATOR, WITH STOPCOCK AND GLASS STOPPER, CLEAR GLASS",
+                "BOTTLE : B.O.D BOTTLE WITH STOPPER (HEAVY WALL)",
+                "BOTTLE - RELATIVE DENSITY ( SPECIFIC GRAVITY ) WITH PTFE STOPPER, CLASS - B",
+                "BOTTLE - WEIGHING - WITH INTERCHANGEABLE STOPPER",
+                "BOTTLE - SPECIFIC GRAVITY, WITH THERMOMETER (PYKNOMETER), CLASS - B",
+                "DROPPING BOTTLE WITH INTERCHANGEABLE DROPPER & RUBBER TEAT, CLEAR GLASS",
+                "DROPPING BOTTLE WITH INTERCHANGEABLE DROPPER & RUBBER TEAT, AMBER GLASS",
+                "GAS WASHING BOTTLE WITH INTERCHANGEABLE STOPPER USING F.B.FLASK",
+                "GAS WASHING BOTTLE WITH INTERCHANGEABLE STOPPER USING F.B.FLASK",
+                "STOPPER (TRAP HEADS) ONLY FOR GAS WASHING BOTTLE",
+                "BOTTLE - GAS WASHING WITH INTERCHANGEABLE STOPPER USING BOTTLES",
+                "STOPPERS ONLY FOR GAS WASHING BOTTLES (TRAP HEAD)",
+                "BOTTLES - GAS BUBBLING ( SEALED TRAP - ONE PIECE )",
+                "BOTTLES - IMPINGERS - GRADUATED,FOR AIR SAMPLING",
+                "BOTTLES - GAS BUBBLING ( SEALED TRAP - ONE PIECE )",
+                "BOTTLES - GAS BUBBLING ( SEALED TRAP - ONE PIECE )",
+            ],
+            "SEAL TUBES": [
+                "SEAL TUBE WITH PTFE STOPPER",
+            ],
+            "COLUMNS": [
+                "SEAL TUBE WITH PTFE STOPPER",
+            ],
+
+            "Funnels": [
+                "Filter Funnel",
+                "Powder Funnel",
+                "Long Stem Funnel"
+            ],
+        };
+
+        const popup = document.getElementById("categoryPopup");
+
+        const title = document.getElementById("popupTitle");
+
+        const list = document.getElementById("subProductList");
+
+        document.querySelectorAll(".sub-category").forEach(card => {
+
+            card.onclick = function () {
+                let category = normalize(this.textContent.trim());
+                console.log(category);
+                title.innerHTML = category;
+
+                list.innerHTML = "";
+                debugger
+                const filteredProducts = products.filter(p =>
+                    //p.name.trim().toLowerCase().includes(category.trim().toLowerCase(),
+                    normalize(p.name).includes(category.replace(/s$/, ""))
+                );
+                if (filteredProducts.length > 0) {
+
+                    filteredProducts.forEach(item => {
+                        console.log(item.name)
+                        list.innerHTML += `
+                             <div class="sub-item"><a href="javascript:void(0)" onclick="loadPDFPage(${item.page});">
+                                 ${item.name}
+                             </a></div> `;
+
+                    });
+
+                }
+                const pdfViewer1 = document.getElementById("pdfViewer1");
+                pdfViewer1.src = "catalog.pdf#page=" + 1;
+                popup.style.display = "block";
+
+            }
+
+        });
+
+        function normalize(text) {
+
+            return text
+                .toLowerCase()
+                // Replace separators with spaces
+                .replace(/[-_/\\]/g, " ")
+                // Remove brackets, quotes, commas, dots, etc.
+                .replace(/[()[\]{}"'`,.;:]/g, "")
+                // Remove multiple spaces
+                .replace(/\s+/g, " ")
+                .trim();
+        }
+
+        function loadPDFPage(pageNo) {
+            const iframe = document.getElementById("pdfViewer1");
+
+            const viewer = iframe.contentWindow;
+
+            if (viewer.PDFViewerApplication) {
+                viewer.PDFViewerApplication.page = pageNo;
+            } else {
+                // PDF not loaded yet
+                iframe.onload = function () {
+                    viewer.PDFViewerApplication.page = pageNo;
+                };
+            }
+        }
+
+        document.getElementById("closePopup").onclick = function () {
+
+            popup.style.display = "none";
+
+        };
+
+        window.onclick = function (e) {
+
+            if (e.target == popup) {
+
+                popup.style.display = "none";
+
+            }
+
+        };
+    </script>
+</body>
+
+
+
+</html>
