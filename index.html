@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
 <body>
@@ -62,19 +62,16 @@
             <div class="hero-content">
 
                 <h1>
-
                     PRECISION GLASSWARE<br>
-
                     FOR LABORATORIES
-
                 </h1>
-
                 <p>
-
+                    Where Quality and Service is a concern.
+                </p>
+                <!--<p>
                     Supplying premium laboratory glassware for research,
                     education and industrial applications.
-
-                </p>
+                </p>-->
 
                 <a href="#search" class="btn">
 
@@ -109,7 +106,7 @@
 
                 <p>
 
-                    Alive Group is committed to manufacturing and supplying
+                    Alive Group is committed to supply
                     high-quality laboratory glassware with precision,
                     durability and international quality standards.
 
@@ -130,12 +127,18 @@
 
                 </p>
 
-                <a href="#features" class="btn2">
+                <!--<a href="#features" class="btn2">
 
                     Learn More
 
-                </a>
+                </a>-->
+                <a href="https://wa.me/918140814067?text=Hello%20Alive%20Group,%20I%20would%20like%20to%20enquire%20about%20your%20laboratory%20glassware."
+                   target="_blank"
+                   class="btn2">
 
+                    <i class="fab fa-whatsapp"></i>
+                    Get Instant Inquiry
+                </a>
             </div>
 
         </div>
@@ -241,11 +244,11 @@
 
             <div class="category-grid">
 
-                <div class="category-card sub-category" onclick="searchCategory('adapters')">Adapters</div>
-                <div class="category-card sub-category" onclick="searchCategory('Beakers')">Beakers</div>
+                <div class="category-card sub-categoryy" onclick="searchCategory('adapters')">Adapters</div>
+                <div class="category-card sub-categoryy" onclick="searchCategory('Beakers')">Beakers</div>
 
 
-                <div class="category-card sub-category" onclick="searchCategory('bottles')">
+                <div class="category-card sub-categoryy" onclick="searchCategory('bottles')">
                     BOTTLES
                 </div>
 
@@ -348,8 +351,8 @@
 
             <h2 style="text-align:center">CONTACT US</h2>
 
-            <p class="subtitle">
-                We are always ready to help you with your laboratory requirements.
+            <p class="subtitle" style="color:darkred; font-weight:500;">
+                Get instant assistance for product enquiries, quotations and orders.
             </p>
 
             <div class="contact-grid">
@@ -359,8 +362,7 @@
                     <h3>Address</h3>
 
                     <p>
-                        Ahmedabad, Gujarat<br>
-                        India,382330<br>
+                        3 Paradise Park 382330, Naroda - Dehgam Rd, Ahmedabad, Gujarat 382330<br>
                     </p>
 
                 </div>
@@ -381,28 +383,27 @@
 
                     <p>
                         Send Us Enquiry <br>
-                        <a href="mailto:info@alivegroup.com">
-                            info@alivegroup.com
-                        </a>
+                                        <a href="mailto:alivesolution@gmail.com">
+                                            alivesolution@gmail.com
+                                        </a>
                     </p>
 
                 </div>
 
                 <div class="contact-card">
 
-                    <h3>Phone</h3>
-
-                    <p>
-
-                        Send Us Enquiry <br>
-                        <a href="https://wa.me/08140814067"
-                           target="_blank"
-                           class="whatsapp-link">
-                            +91 081408 14067
-
-                        </a>
-
+                    <h3>WhatsApp</h3>
+                    <p class="whatsapp-note">
+                       Connect with us on whatsapp.
                     </p>
+                    <a href="https://wa.me/918140814067?text=Hello%20Alive%20Group,%20I%20would%20like%20to%20enquire%20about%20your%20laboratory%20glassware."
+                       target="_blank"
+                       class="whatsapp-btn">
+
+                        <i class="fab fa-whatsapp"></i>
+                        +91 8140814067
+
+                    </a>
 
 
                 </div>
@@ -449,7 +450,7 @@
 
             <p>
 
-                Precision Laboratory Glassware Manufacturer & Supplier
+                Precision Laboratory Glassware Supplier
 
             </p>
 
@@ -661,6 +662,7 @@
         // ===============================
 
         function openPDF(page, catalog) {
+            debugger
             if (catalog && catalog.includes("adapter"))
             {
               pdfViewer.src = "adaptercatalog.pdf#page=" + page;
@@ -669,7 +671,7 @@
              pdfViewer.src = "catalog.pdf#page=" + page;
             }
 
-            pdfViewer.src = "catalog.pdf#page=" + page;
+            //pdfViewer.src = "catalog.pdf#page=" + page;
 
             modal.style.display = "block";
 
