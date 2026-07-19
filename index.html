@@ -139,6 +139,10 @@
                     <i class="fab fa-whatsapp"></i>
                     Get Instant Enquiry
                 </a>
+
+                <button id="enquiryBtn" class="btn2">
+                    Get Quotations
+                </button>
             </div>
 
         </div>
@@ -383,9 +387,9 @@
 
                     <p>
                         Send Us Enquiry <br>
-                                        <a href="mailto:alivesolution@gmail.com">
-                                            alivesolution@gmail.com
-                                        </a>
+                        <a href="mailto:alivesolution@gmail.com">
+                            alivesolution@gmail.com
+                        </a>
                     </p>
 
                 </div>
@@ -394,7 +398,7 @@
 
                     <h3>WhatsApp</h3>
                     <p class="whatsapp-note">
-                       Connect with us on whatsapp.
+                        Connect with us on whatsapp.
                     </p>
                     <a href="https://wa.me/918140814067?text=Hello%20Alive%20Group,%20I%20would%20like%20to%20enquire%20about%20your%20laboratory%20glassware."
                        target="_blank"
@@ -436,6 +440,31 @@
         </div>
 
     </div>
+
+
+    <!-- ================= enquiryPopup ================= -->
+    <!-- enquiry Popup -->
+
+    <div id="enquiryPopup" class="popup">
+
+        <div class="popup-content">
+
+            <span class="close-popup">&times;</span>
+
+            <h2>Get Quotations</h2>
+
+            <textarea id="enquiryMessage"
+                      placeholder="Write your enquiry here..."
+                      rows="6"></textarea>
+
+            <button id="sendEmailBtn" class="btn2">
+                Send Email
+            </button>
+
+        </div>
+
+    </div>
+
     <!-- ================= FOOTER ================= -->
 
     <footer>
@@ -887,10 +916,10 @@
             "THERMOMETER POCKET(SHORT) FOR STILL HEAD / CLAISENHEAD",
             "ADAPTER - RECOVERY SPLASH HEAD SLOPPING",
             "ADAPTER - RECOVERY SPLASH HEAD VERTICAL",
-            "ADAPTER - RECEIVER PLAIN BEND SHORT / LONG", 
+            "ADAPTER - RECEIVER PLAIN BEND SHORT / LONG",
             "ADAPTER - RECEIVER BEND WITH VACUUM CONNECTION",
-            "ADAPTER - RECEIVER BEND WITH MULTIPLE CONNECTION(PIG)", 
-            "ADAPTER - RECEIVER MULTI - LIMB WITH VACUUM CONNECTION", 
+            "ADAPTER - RECEIVER BEND WITH MULTIPLE CONNECTION(PIG)",
+            "ADAPTER - RECEIVER MULTI - LIMB WITH VACUUM CONNECTION",
             "RECEIVER ADAPTER FOR MULTI - LIMB SLOPPING DELIVERY",
             "ADAPTER - INTERMEDIATE RECIVER PERKIN"
         ],
@@ -983,6 +1012,52 @@
     }
 
     };
+    </script>
+
+
+    <!--enquiry popup-->
+    <script>
+    const enquiryPopup = document.getElementById("enquiryPopup");
+
+    document.getElementById("enquiryBtn").onclick = function () {
+    enquiryPopup.style.display = "block";
+    };
+
+    document.querySelector(".close-popup").onclick = function () {
+    enquiryPopup.style.display = "none";
+    };
+
+    window.onclick = function (e) {
+    if (e.target == enquiryPopup) {
+    enquiryPopup.style.display = "none";
+    }
+    };
+
+    document.getElementById("sendEmailBtn").onclick = function () {
+
+    const message = document.getElementById("enquiryMessage").value.trim();
+
+    if(message === ""){
+    alert("Please enter your enquiry.");
+    return;
+    }
+
+    const subject = "Product Enquiry";
+
+    const body =
+    `Hello Alive Group,
+
+    ${message}
+
+    enquiry sent via www.alivegroup.co.in
+    `;
+
+    window.location.href =
+    "mailto:alivesolution@gmail.com"
+    + "?subject=" + encodeURIComponent(subject)
+    + "&body=" + encodeURIComponent(body);
+    };
+
     </script>
 </body>
 
