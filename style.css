@@ -292,7 +292,7 @@ button.btn2 {
     text-align:center;
     color:#666;
     font-size:18px;
-    margin-bottom:60px;
+    margin-bottom:10px;
 
 }
 
@@ -360,7 +360,7 @@ button.btn2 {
 .search-box{
 
     max-width:750px;
-    margin:40px auto 0;
+    margin:15px auto 0;
     position:relative;
 
 }
@@ -1309,4 +1309,133 @@ nav ul li a {
     .product-image {
         width: 100%;
     }
+}
+
+
+/*Estimation cart popup*/
+.estimationPopup .modal-content {
+    width: 95%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+ .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.estimationTable .table {
+    width: 100%;
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+    .estimationTable .table td,
+    .estimationTable .table th {
+        white-space: normal;
+        word-break: break-word;
+        vertical-align: top;
+    }
+
+@media (max-width:768px) {
+
+    .estimationPopup .modal-content {
+        width: 95%;
+        max-width: 900px;
+        max-height: 90vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .table-responsive {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .estimationTable .table {
+        width: 100%;
+        table-layout: fixed;
+        word-wrap: break-word;
+    }
+
+        .estimationTable .table td,
+        .estimationTable .table th {
+            white-space: normal;
+            word-break: break-word;
+            vertical-align: top;
+        }
+}
+
+/*Print*/
+
+    @media print {
+
+        body {
+            margin: 0;
+            padding: 10px;
+        }
+
+        .table-responsive {
+            overflow: visible !important;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            page-break-inside: auto;
+        }
+
+        thead {
+            display: table-header-group;
+        }
+
+        tfoot {
+            display: table-footer-group;
+        }
+
+        tr {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        td, th {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        .invoice-table th:last-child,
+        .invoice-table td:last-child {
+            display: none;
+        }
+
+        .no-print {
+            display: none !important;
+        }
+    }
+/*End Print*/
+
+/*quotation-btn*/
+.quotation-btn-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0;
+}
+
+
+@media(max-width:768px) {
+
+    .quotation-btn-wrapper {
+        margin: 10px 0;
+        padding: 0 15px;
+    }
+
+  
 }
