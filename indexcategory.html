@@ -45,6 +45,17 @@
                     <li><a href="/#search">Products</a></li>
 
                     <li><a href="/#contact">Contact</a></li>
+                    <li>
+                        <!--<button id="btnViewEstimation"
+                                class="btn btn-success estimation-btn w-100"
+                                onclick="showEstimation()"  
+                                style="white-space:nowrap;">
+
+                            <i class="bi bi-cart-check-fill"></i>
+                            (<span id="cartCount">0</span>)
+
+                        </button>-->
+                    </li>
 
                 </ul>
 
@@ -77,7 +88,7 @@
                 </div>
             </div>
 
-            <!-- View Estimation -->
+             <!--View Estimation--> 
             <div class="col-lg-3 col-md-4 col-12">
 
                 <button id="btnViewEstimation"
@@ -121,27 +132,7 @@
     <section>
         <div id="productDetails"></div>
     </section>
-    <!-- ================= PRODUCT-SHOW ================= -->
-    <!--<div class="container">
-        <div class="row">
 
-            <div class="col-lg-6 col-md-6 col-12">
-                Left Content
-                Left Content
-                Left Content
-                Left Content
-                Left Content
-            </div>
-
-            <div class="col-lg-6 col-md-6 col-12">
-                Right Content
-                Right Content
-                Right Content
-                Right Content
-            </div>
-
-        </div>
-    </div>-->
     <!-- Scroll To Top -->
 
     <button id="topBtn">
@@ -174,7 +165,7 @@
 
 
         // ===============================
-        // Alive Group Product Search
+        // Alive Group Product Search view estimation page
         // ===============================
         let products = [];
         let excelData = [];
@@ -184,7 +175,6 @@
             excelData = data;
 
             products = data.map(item => ({ name: item.category }));
-            console.log(products.length);
         }
         loadProducts();
 
@@ -337,17 +327,17 @@
             mainProduct.subProducts.forEach(item => {
 
                 rows += `
-                                            <tr>
-                                                <td>${item.catNo}</td>
-                                                <td>${item.description}</td>
-                                                <td>${item.rate}/-</td>
-                                                <td>
-                                                <button class="btn btn-primary"
-                                onclick='addToEstimation(${JSON.stringify(item)})'>
-                                Add
-                            </button>
-                                            </tr>
-                                        `;
+                                                <tr>
+                                                    <td>${item.catNo}</td>
+                                                    <td>${item.description}</td>
+                                                    <td>${item.rate}/-</td>
+                                                    <td>
+                                                    <button class="btn btn-primary"
+                                    onclick='addToEstimation(${JSON.stringify(item)})'>
+                                    Add
+                                </button>
+                                                </tr>
+                                            `;
 
             });
 
@@ -355,39 +345,39 @@
             const layoutClass = mainProduct.image ? "product-layout" : "product-layout no-image";
             const imageHtml = mainProduct.image
                 ? `
-                                          <div class="product-image">
-                                            <img src="images/products/${mainProduct.image}" alt="#"
-                                                class="img-fluid rounded shadow" style="max-height:400px; object-fit:contain;">
-                                          </div>
-                          `
+                                              <div class="product-image">
+                                                <img src="images/products/${mainProduct.image}" alt="#"
+                                                    class="img-fluid rounded shadow" style="max-height:400px; object-fit:contain;">
+                                              </div>
+                              `
                 : "";
 
             document.getElementById("productDetails").innerHTML = `
-                                            <div  class="${layoutClass}">
-                                                <div class="product-table">
-                                                    <h2 class="mb-4">${mainProduct.category}</h2>
-                                                    <!-- Table -->
-                                                        <div class="table-responsive">
-                                                                 <table class="table table-bordered table-striped">
-                                                                    <thead class="table-dark">
-                                                                        <tr>
-                                                                            <th>Cat. No.</th>
-                                                                            <th>Description</th>
-                                                                            <th>Rate</th>
-                                                                            <th>Add to Estimation</th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                             ${rows}
-                                                                    </tbody>
-                                                                </table>
-                                                        </div>
-                                               </div>
+                                                <div  class="${layoutClass}">
+                                                    <div class="product-table">
+                                                        <h2 class="mb-4">${mainProduct.category}</h2>
+                                                        <!-- Table -->
+                                                            <div class="table-responsive">
+                                                                     <table class="table table-bordered table-striped">
+                                                                        <thead class="table-dark">
+                                                                            <tr>
+                                                                                <th>Cat. No.</th>
+                                                                                <th>Description</th>
+                                                                                <th>Rate</th>
+                                                                                <th width="20">Add to <br /> Estimation</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                                 ${rows}
+                                                                        </tbody>
+                                                                    </table>
+                                                            </div>
+                                                   </div>
 
-                                                     <!-- Image -->
-                                           ${imageHtml}
-                                    </div>
-                                    `;
+                                                         <!-- Image -->
+                                               ${imageHtml}
+                                        </div>
+                                        `;
             document.getElementById("productDetails").style.display = "block"
         }
 
@@ -559,8 +549,7 @@
 
     <!--//add to estimation-->
     <script>
-        let estimationCart =
-            JSON.parse(localStorage.getItem("estimationCart")) || [];
+        let estimationCart = JSON.parse(localStorage.getItem("estimationCart")) || [];
 
         updateCartCount();
 
@@ -641,30 +630,30 @@
             let grandTotal = 0;
 
             let html = `
-                    <div class="table-responsive">
+                        <div class="table-responsive">
 
-                    <table class="table table-bordered invoice-table">
+                        <table class="table table-bordered invoice-table">
 
-                        <thead class="table-dark">
+                            <thead class="table-dark">
 
-                            <tr>
-                                <th>Sr.</th>
-                                <th>Description</th>
-                                <th>Cat. No.</th>
-                                <th>Qty</th>
-                                <!--<th>Unit</th>-->
-                                <th>Rate</th>
-                                <th>Amount</th>
-                                <th>GST %</th>
-                                <th>GST Amt</th>
-                                <th>Total</th>
-                                <th>Action</th>
-                            </tr>
+                                <tr>
+                                    <th>Sr.</th>
+                                    <th>Description</th>
+                                    <th>Cat. No.</th>
+                                    <th>Qty</th>
+                                    <!--<th>Unit</th>-->
+                                    <th>Rate</th>
+                                    <th>Amount</th>
+                                    <th>GST %</th>
+                                    <th>GST Amt</th>
+                                    <th>Total</th>
+                                    <th>Action</th>
+                                </tr>
 
-                        </thead>
+                            </thead>
 
-                        <tbody>
-                    `;
+                            <tbody>
+                        `;
 
             estimationCart.forEach((item, index) => {
 
@@ -682,61 +671,61 @@
                 grandTotal += finalAmount;
 
                 html += `
-                        <tr>
+                            <tr>
 
-                            <td>${index + 1}</td>
+                                <td>${index + 1}</td>
 
-                            <td>${item.description}</td>
+                                <td>${item.description}</td>
 
-                            <td>${item.catNo}</td>
+                                <td>${item.catNo}</td>
 
-                            <td style="width:90px">
+                                <td style="width:90px">
 
-                                <input
-                                    type="number"
-                                    min="1"
-                                    value="${qty}"
-                                    class="form-control text-center"
-                                    onchange="updateQty(${index},this.value)">
+                                    <input
+                                        type="number"
+                                        min="1"
+                                        value="${qty}"
+                                        class="form-control text-center"
+                                        onchange="updateQty(${index},this.value)">
 
-                            </td>
+                                </td>
 
-                            <!--<td>NOS</td>-->
+                                <!--<td>NOS</td>-->
 
-                            <td class="text-end">
-                                ₹${rate.toFixed(2)}
-                            </td>
+                                <td class="text-end">
+                                    ₹${rate.toFixed(2)}
+                                </td>
 
-                            <td class="text-end">
-                                ₹${amount.toFixed(2)}
-                            </td>
+                                <td class="text-end">
+                                    ₹${amount.toFixed(2)}
+                                </td>
 
-                            <td class="text-center">
-                                ${gst}
-                            </td>
+                                <td class="text-center">
+                                    ${gst}
+                                </td>
 
-                            <td class="text-end">
-                                ₹${gstAmount.toFixed(2)}
-                            </td>
+                                <td class="text-end">
+                                    ₹${gstAmount.toFixed(2)}
+                                </td>
 
-                            <td class="text-end fw-bold">
-                                ₹${finalAmount.toFixed(2)}
-                            </td>
+                                <td class="text-end fw-bold">
+                                    ₹${finalAmount.toFixed(2)}
+                                </td>
 
-                            <td class="text-center">
+                                <td class="text-center">
 
-                                <button
-                                    class="btn btn-danger btn-sm"
-                                    onclick="removeItem(${index})">
+                                    <button
+                                        class="btn btn-danger btn-sm"
+                                        onclick="removeItem(${index})">
 
-                                    <i class="bi bi-trash"></i>
+                                        <i class="bi bi-trash"></i>
 
-                                </button>
+                                    </button>
 
-                            </td>
+                                </td>
 
-                        </tr>
-                        `;
+                            </tr>
+                            `;
             });
 
             const roundedTotal = Math.round(grandTotal);
@@ -744,108 +733,108 @@
 
             html += `
 
-                        </tbody>
+                            </tbody>
 
-                        <tfoot>
+                            <tfoot>
 
-                            <tr class="table-secondary">
+                                <tr class="table-secondary">
 
-                                <th colspan="3" class="text-center">
-                                    TOTAL
-                                </th>
+                                    <th colspan="3" class="text-center">
+                                        TOTAL
+                                    </th>
 
-                                <th>${totalQty}</th>
-                                <!--<th></th>-->
-
-
-                                <th></th>
-
-                                <th class="text-end">
-                                    ₹${subTotal.toFixed(2)}
-                                </th>
-
-                                <th></th>
-
-                                <th class="text-end">
-                                    ₹${totalGST.toFixed(2)}
-                                </th>
-
-                                <th class="text-end">
-                                    ₹${grandTotal.toFixed(2)}
-                                </th>
-
-                                <th></th>
-
-                            </tr>
-
-                            <tr>
-
-                                <td colspan="9"
-                                    class="text-end fw-bold">
-
-                                    Round Off
-
-                                </td>
-
-                                <td class="text-end">
-                                    ₹${roundOff}
-                                </td>
+                                    <th>${totalQty}</th>
+                                    <!--<th></th>-->
 
 
-                            </tr>
+                                    <th></th>
 
-                            <tr>
+                                    <th class="text-end">
+                                        ₹${subTotal.toFixed(2)}
+                                    </th>
 
-                                <td colspan="9"
-                                    class="fw-bold">
+                                    <th></th>
 
-                                    Total Invoice Value (In Figure)
+                                    <th class="text-end">
+                                        ₹${totalGST.toFixed(2)}
+                                    </th>
 
-                                </td>
+                                    <th class="text-end">
+                                        ₹${grandTotal.toFixed(2)}
+                                    </th>
 
-                                <td class="text-end fw-bold">
-                                    ₹${roundedTotal.toFixed(2)}
-                                </td>
+                                    <th></th>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td colspan="9"
+                                        class="text-end fw-bold">
+
+                                        Round Off
+
+                                    </td>
+
+                                    <td class="text-end">
+                                        ₹${roundOff}
+                                    </td>
 
 
-                            </tr>
-                             <tr>
+                                </tr>
 
-                     <td colspan="5" class="fw-bold">
-                         <b>Total Invoice Value (In Words)</b>
-                     </td>
+                                <tr>
 
-                     <td colspan="5" class="text-end fw-bold">
-                        ${numberToWords(roundedTotal).toUpperCase()} ONLY
-                     </td>
-                 </tr>
+                                    <td colspan="9"
+                                        class="fw-bold">
+
+                                        Total Invoice Value (In Figure)
+
+                                    </td>
+
+                                    <td class="text-end fw-bold">
+                                        ₹${roundedTotal.toFixed(2)}
+                                    </td>
 
 
-                        </tfoot>
-                    </table>
-                    </div>
+                                </tr>
+                                 <tr>
 
-                    <div class="text-end mt-3">
-                        <button
-                            class="btn btn-success"
-                            onclick="sendEstimationEmail()">
+                         <td colspan="5" class="fw-bold">
+                             <b>Total Invoice Value (In Words)</b>
+                         </td>
 
-                            Send Estimation
+                         <td colspan="5" class="text-end fw-bold">
+                            ${numberToWords(roundedTotal).toUpperCase()} ONLY
+                         </td>
+                     </tr>
 
-                        </button>
 
-                      <!--  <button class="btn btn-primary" onclick="printEstimation()">Print</button>-->
+                            </tfoot>
+                        </table>
+                        </div>
 
-                        <button
-                            class="btn btn-danger ms-2"
-                            onclick="clearEstimation()">
+                        <div class="text-end mt-3">
+                            <button
+                                class="btn btn-success"
+                                onclick="sendEstimationEmail()">
 
-                            Clear All
+                                Send Estimation
 
-                        </button>
+                            </button>
 
-                    </div>
-                    `;
+                          <!--  <button class="btn btn-primary" onclick="printEstimation()">Print</button>-->
+
+                            <button
+                                class="btn btn-danger ms-2"
+                                onclick="clearEstimation()">
+
+                                Clear All
+
+                            </button>
+
+                        </div>
+                        `;
 
             document.getElementById("estimationTable").innerHTML = html;
             document.getElementById("estimationPopup").style.display = "block";
@@ -900,8 +889,8 @@
 
                 document.getElementById("estimationTable").innerHTML =
                     `<div class="text-center p-4">
-                                <h4>No products added.</h4>
-                            </div>`;
+                                    <h4>No products added.</h4>
+                                </div>`;
 
                 document.getElementById("estimationPopup").style.display = "block";
             }
@@ -924,8 +913,8 @@
             // Update popup
             document.getElementById("estimationTable").innerHTML =
                 `<div class="text-center p-4">
-                            <h4>No products added.</h4>
-                        </div>`;
+                                <h4>No products added.</h4>
+                            </div>`;
 
             document.getElementById("estimationPopup").style.display = "none";
         }
@@ -975,11 +964,11 @@
                 grandTotal += finalAmount;
 
                 body +=
-                    "Sr." + (index + 1) + " " + item.description
+                    (index + 1) + "). " + item.description
                     + "\n Cat No: " + item.catNo
                     + "\n Qty: " + qty
                     + "\n rate: " + rate.toFixed(2)
-                    + "\n amount:  " + amount.toFixed(2) +
+                    + "\n amount:  " + amount.toFixed(2) 
                     +"\n gstAmount: " + gstAmount.toFixed(2)
                     + "\n finalAmount: " + finalAmount.toFixed(2) + "\n";
 
@@ -1085,46 +1074,46 @@
             const win = window.open("", "", "width=1000,height=700");
 
             win.document.write(`
-            <html>
-            <head>
-                <title>Estimation</title>
+                <html>
+                <head>
+                    <title>Estimation</title>
 
-                <link rel="stylesheet"
-                      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+                    <link rel="stylesheet"
+                          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
-                <style>
-                    body {
-                        padding: 20px;
-                        font-family: Arial;
-                    }
+                    <style>
+                        body {
+                            padding: 20px;
+                            font-family: Arial;
+                        }
 
-                    .btn {
-                        display: none;
-                    }
+                        .btn {
+                            display: none;
+                        }
 
-                    input {
-                        border: none;
-                        text-align: center;
-                        width: 60px;
-                    }
+                        input {
+                            border: none;
+                            text-align: center;
+                            width: 60px;
+                        }
 
-                    .invoice-table th:last-child,
-                    .invoice-table td:last-child {
-                        display: none;
-                    }
-                </style>
+                        .invoice-table th:last-child,
+                        .invoice-table td:last-child {
+                            display: none;
+                        }
+                    </style>
 
-            </head>
+                </head>
 
-            <body>
+                <body>
 
-                <h2>Alive Group</h2>
+                    <h2>Alive Group</h2>
 
-                ${printContents}
+                    ${printContents}
 
-            </body>
+                </body>
 </html>
-            `);
+                `);
 
             win.document.close();
             win.focus();
@@ -1142,3 +1131,4 @@
 
 
 </html>
+<!-- check this in email amount:  36000.00NaN6480.00 -->
