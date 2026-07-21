@@ -1439,3 +1439,31 @@ nav ul li a {
 
   
 }
+
+
+/*set navbar to right responsive*/
+/* Large Desktop */
+#navbar {
+    margin-left: 400px;
+}
+
+/* Laptop */
+@media (max-width: 1200px) {
+    #navbar {
+        margin-left: 250px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    #navbar {
+        margin-left: 120px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    #navbar {
+        margin-left: 0;
+    }
+}
