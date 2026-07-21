@@ -25,7 +25,7 @@
         <div class="container">
 
             <div class="bannerlogo">
-               <img src="images/logo2.png" alt="Alive Group"/>
+                <img src="images/logo2.png" alt="Alive Group" />
             </div>
             <div class="menu-toggle" id="menuToggle">
                 ☰
@@ -408,19 +408,31 @@
                 </div>
                 <div class="contact-card">
 
-                    <h3>Email</h3>
+                    <h3>Connect with us</h3>
 
                     <p>
-                        Send Us Enquiry <br>
+                        <strong> Email</strong>
+                        <br>
                         <a href="mailto:alivesolution@gmail.com">
                             alivesolution@gmail.com
-                        </a><br />
-
+                        </a>
                     </p>
 
+
+                    <p>
+                        <strong> WhatsApp</strong>   <br />
+                        <a href="https://wa.me/918140814067?text=Hello%20Alive%20Group,%20I%20would%20like%20to%20enquire%20about%20your%20laboratory%20glassware."
+                           target="_blank"
+                           class="whatsapp-btn">
+
+                            <i class="fab fa-whatsapp"></i>
+                            +91 8140814067
+
+                        </a>
+                    </p>
                 </div>
 
-                <div class="contact-card">
+                <!--<div class="contact-card">
 
                     <h3>WhatsApp</h3>
                     <p class="whatsapp-note">
@@ -436,7 +448,7 @@
                     </a>
 
 
-                </div>
+                </div>-->
 
             </div>
 
@@ -558,14 +570,14 @@
             { name: "ADAPTER - RECEIVER BEND WITH VACUUM CONNECTION", page: 8 },
             { name: "ADAPTER - RECEIVER BEND WITH MULTIPLE CONNECTION (PIG) ", page: 8 },
             { name: "ADAPTER - RECEIVER MULTI-LIMB WITH VACUUM CONNECTION ", page: 9 },
-            { name: "RECEIVER ADAPTER FOR MULTI-LIMB SLOPPING DELIVERY" , page: 9 },
-            { name: "ADAPTER - INTERMEDIATE RECIVER PERKIN" , page: 9 },
+            { name: "RECEIVER ADAPTER FOR MULTI-LIMB SLOPPING DELIVERY", page: 9 },
+            { name: "ADAPTER - INTERMEDIATE RECIVER PERKIN", page: 9 },
             { name: "BEAKERS", page: 13 },
             { name: "BOTTLES", page: 14 },
             { name: "BURETTES", page: 20 },
             { name: "SEAL TUBES", page: 23 },
             { name: "COLUMNS", page: 24 },
-            { name: "CHROMATIGRAPHY", page: 39},
+            { name: "CHROMATIGRAPHY", page: 39 },
             { name: "CONDENSERS", page: 41 },
             { name: "CYLINDERS", page: 46 },
             { name: "DISHES", page: 50 },
@@ -636,7 +648,7 @@
                         input.value = input.value.trim().toLowerCase()
 
                     suggestions.style.display = "none";
-                    
+
                     openPDF(product.page, input.value);
 
                 };
@@ -686,7 +698,7 @@
         // ===============================
 
         function searchProduct() {
-            
+
             let keyword = input.value.trim().toLowerCase();
 
             if (keyword === "") {
@@ -716,13 +728,12 @@
         // ===============================
 
         function openPDF(page, catalog) {
-            
-            if (catalog && catalog.includes("adapter"))
-            {
-              pdfViewer.src = "adaptercatalog.pdf#page=" + page;
+
+            if (catalog && catalog.includes("adapter")) {
+                pdfViewer.src = "adaptercatalog.pdf#page=" + page;
             }
-            else{
-             pdfViewer.src = "catalog.pdf#page=" + page;
+            else {
+                pdfViewer.src = "catalog.pdf#page=" + page;
             }
 
             //pdfViewer.src = "catalog.pdf#page=" + page;
@@ -925,162 +936,162 @@
         }
     </script>
     <script>
-    const data = {
+        const data = {
 
-         "Adapters":[
-            "ADAPTERS - EXPANSION",
-            "ADAPTERS - REDUCERS",
-            "ADAPTERS - TWO WAY PARALLEL",
-            "ADAPTER - CONE TO RUBBER TUBING",
-            "ADAPTER - CONE WITH GLASS STOPCOCK",
-            "ADAPTER - VACUUM RELEASE STOPCOCK(ONE WAY)",
-            "ADAPTER - VACUUM RELEASE & CONTROL STOPCOCK",
-            "ADAPTER - RECOVERY PLAIN BEND SLOPPING",
-            "ADAPTER - RECOVERY STILL HEAD",
-            "ADAPTER - RECOVERY CLAISENHEAD SLOPPING",
-            "THERMOMETER POCKET(SHORT) FOR STILL HEAD / CLAISENHEAD",
-            "ADAPTER - RECOVERY SPLASH HEAD SLOPPING",
-            "ADAPTER - RECOVERY SPLASH HEAD VERTICAL",
-            "ADAPTER - RECEIVER PLAIN BEND SHORT / LONG",
-            "ADAPTER - RECEIVER BEND WITH VACUUM CONNECTION",
-            "ADAPTER - RECEIVER BEND WITH MULTIPLE CONNECTION(PIG)",
-            "ADAPTER - RECEIVER MULTI - LIMB WITH VACUUM CONNECTION",
-            "RECEIVER ADAPTER FOR MULTI - LIMB SLOPPING DELIVERY",
-            "ADAPTER - INTERMEDIATE RECIVER PERKIN"
-        ],
-        "Beakers": [
-            "BEAKERS - LOW FORM WITH SPOUT GRADUATED",
-        ],
-             "BOTTLES":[
-                 "BOTTLES - REAGENT, NARROW MOUTH WITH FLAT HEAD STOPPER, AMBERGLASS",
-                 "BOTTLE - REAGENT, WIDE MOUTH WITH SCREW CAP,CLEAR GLASS",
-                 "BOTTLE - REAGENT, WIDE MOUTH WITH SCREW CAP,AMBER GLASS",
-                 "BOTTLE - ASPIRATOR, WITH OUTLET FOR RUBBER TUBING, WITHOUT STOPPER",
-                 "BOTTLE - ASPIRATOR, WITH STOPCOCK AND GLASS STOPPER, CLEAR GLASS",
-                 "BOTTLE : B.O.D BOTTLE WITH STOPPER (HEAVY WALL)",
-                 "BOTTLE - RELATIVE DENSITY ( SPECIFIC GRAVITY ) WITH PTFE STOPPER, CLASS - B",
-                 "BOTTLE - WEIGHING - WITH INTERCHANGEABLE STOPPER",
-                 "BOTTLE - SPECIFIC GRAVITY, WITH THERMOMETER (PYKNOMETER), CLASS - B",
-                 "DROPPING BOTTLE WITH INTERCHANGEABLE DROPPER & RUBBER TEAT, CLEAR GLASS",
-                 "DROPPING BOTTLE WITH INTERCHANGEABLE DROPPER & RUBBER TEAT, AMBER GLASS",
-                 "GAS WASHING BOTTLE WITH INTERCHANGEABLE STOPPER USING F.B.FLASK",
-                 "GAS WASHING BOTTLE WITH INTERCHANGEABLE STOPPER USING F.B.FLASK",
-                 "STOPPER (TRAP HEADS) ONLY FOR GAS WASHING BOTTLE",
-                 "BOTTLE - GAS WASHING WITH INTERCHANGEABLE STOPPER USING BOTTLES",
-                 "STOPPERS ONLY FOR GAS WASHING BOTTLES (TRAP HEAD)",
-                 "BOTTLES - GAS BUBBLING ( SEALED TRAP - ONE PIECE )",
-                 "BOTTLES - IMPINGERS - GRADUATED,FOR AIR SAMPLING",
-                 "BOTTLES - GAS BUBBLING ( SEALED TRAP - ONE PIECE )",
-                 "BOTTLES - GAS BUBBLING ( SEALED TRAP - ONE PIECE )",
+            "Adapters": [
+                "ADAPTERS - EXPANSION",
+                "ADAPTERS - REDUCERS",
+                "ADAPTERS - TWO WAY PARALLEL",
+                "ADAPTER - CONE TO RUBBER TUBING",
+                "ADAPTER - CONE WITH GLASS STOPCOCK",
+                "ADAPTER - VACUUM RELEASE STOPCOCK(ONE WAY)",
+                "ADAPTER - VACUUM RELEASE & CONTROL STOPCOCK",
+                "ADAPTER - RECOVERY PLAIN BEND SLOPPING",
+                "ADAPTER - RECOVERY STILL HEAD",
+                "ADAPTER - RECOVERY CLAISENHEAD SLOPPING",
+                "THERMOMETER POCKET(SHORT) FOR STILL HEAD / CLAISENHEAD",
+                "ADAPTER - RECOVERY SPLASH HEAD SLOPPING",
+                "ADAPTER - RECOVERY SPLASH HEAD VERTICAL",
+                "ADAPTER - RECEIVER PLAIN BEND SHORT / LONG",
+                "ADAPTER - RECEIVER BEND WITH VACUUM CONNECTION",
+                "ADAPTER - RECEIVER BEND WITH MULTIPLE CONNECTION(PIG)",
+                "ADAPTER - RECEIVER MULTI - LIMB WITH VACUUM CONNECTION",
+                "RECEIVER ADAPTER FOR MULTI - LIMB SLOPPING DELIVERY",
+                "ADAPTER - INTERMEDIATE RECIVER PERKIN"
             ],
-        "SEAL TUBES": [
-            "SEAL TUBE WITH PTFE STOPPER",
-        ],
-        "COLUMNS": [
-            "SEAL TUBE WITH PTFE STOPPER",
-        ],
+            "Beakers": [
+                "BEAKERS - LOW FORM WITH SPOUT GRADUATED",
+            ],
+            "BOTTLES": [
+                "BOTTLES - REAGENT, NARROW MOUTH WITH FLAT HEAD STOPPER, AMBERGLASS",
+                "BOTTLE - REAGENT, WIDE MOUTH WITH SCREW CAP,CLEAR GLASS",
+                "BOTTLE - REAGENT, WIDE MOUTH WITH SCREW CAP,AMBER GLASS",
+                "BOTTLE - ASPIRATOR, WITH OUTLET FOR RUBBER TUBING, WITHOUT STOPPER",
+                "BOTTLE - ASPIRATOR, WITH STOPCOCK AND GLASS STOPPER, CLEAR GLASS",
+                "BOTTLE : B.O.D BOTTLE WITH STOPPER (HEAVY WALL)",
+                "BOTTLE - RELATIVE DENSITY ( SPECIFIC GRAVITY ) WITH PTFE STOPPER, CLASS - B",
+                "BOTTLE - WEIGHING - WITH INTERCHANGEABLE STOPPER",
+                "BOTTLE - SPECIFIC GRAVITY, WITH THERMOMETER (PYKNOMETER), CLASS - B",
+                "DROPPING BOTTLE WITH INTERCHANGEABLE DROPPER & RUBBER TEAT, CLEAR GLASS",
+                "DROPPING BOTTLE WITH INTERCHANGEABLE DROPPER & RUBBER TEAT, AMBER GLASS",
+                "GAS WASHING BOTTLE WITH INTERCHANGEABLE STOPPER USING F.B.FLASK",
+                "GAS WASHING BOTTLE WITH INTERCHANGEABLE STOPPER USING F.B.FLASK",
+                "STOPPER (TRAP HEADS) ONLY FOR GAS WASHING BOTTLE",
+                "BOTTLE - GAS WASHING WITH INTERCHANGEABLE STOPPER USING BOTTLES",
+                "STOPPERS ONLY FOR GAS WASHING BOTTLES (TRAP HEAD)",
+                "BOTTLES - GAS BUBBLING ( SEALED TRAP - ONE PIECE )",
+                "BOTTLES - IMPINGERS - GRADUATED,FOR AIR SAMPLING",
+                "BOTTLES - GAS BUBBLING ( SEALED TRAP - ONE PIECE )",
+                "BOTTLES - GAS BUBBLING ( SEALED TRAP - ONE PIECE )",
+            ],
+            "SEAL TUBES": [
+                "SEAL TUBE WITH PTFE STOPPER",
+            ],
+            "COLUMNS": [
+                "SEAL TUBE WITH PTFE STOPPER",
+            ],
 
-    "Funnels":[
-    "Filter Funnel",
-    "Powder Funnel",
-    "Long Stem Funnel"
-    ],
-    };
+            "Funnels": [
+                "Filter Funnel",
+                "Powder Funnel",
+                "Long Stem Funnel"
+            ],
+        };
 
-    const popup=document.getElementById("categoryPopup");
+        const popup = document.getElementById("categoryPopup");
 
-    const title=document.getElementById("popupTitle");
+        const title = document.getElementById("popupTitle");
 
-    const list=document.getElementById("subProductList");
+        const list = document.getElementById("subProductList");
 
-    document.querySelectorAll(".sub-category").forEach(card=>{
+        document.querySelectorAll(".sub-category").forEach(card => {
 
-    card.onclick=function(){
-        
-    let category=this.textContent.trim();
-    title.innerHTML=category;
+            card.onclick = function () {
 
-    list.innerHTML="";
+                let category = this.textContent.trim();
+                title.innerHTML = category;
 
-    if(data[category]){
+                list.innerHTML = "";
 
-    data[category].forEach(item=>{
+                if (data[category]) {
 
-    list.innerHTML+=`
-    <div class="sub-item">
-        ${item}
-    </div>`;
+                    data[category].forEach(item => {
 
-    });
+                        list.innerHTML += `
+        <div class="sub-item">
+            ${item}
+        </div>`;
 
-    }
+                    });
 
-    popup.style.display="block";
+                }
 
-    }
+                popup.style.display = "block";
 
-    });
+            }
 
-    document.getElementById("closePopup").onclick=function(){
+        });
 
-    popup.style.display="none";
+        document.getElementById("closePopup").onclick = function () {
 
-    };
+            popup.style.display = "none";
 
-    window.onclick=function(e){
+        };
 
-    if(e.target==popup){
+        window.onclick = function (e) {
 
-    popup.style.display="none";
+            if (e.target == popup) {
 
-    }
+                popup.style.display = "none";
 
-    };
+            }
+
+        };
     </script>
 
 
     <!--enquiry popup-->
     <script>
-    const enquiryPopup = document.getElementById("enquiryPopup");
+        const enquiryPopup = document.getElementById("enquiryPopup");
 
-    document.getElementById("enquiryBtn").onclick = function () {
-    enquiryPopup.style.display = "block";
-    };
+        document.getElementById("enquiryBtn").onclick = function () {
+            enquiryPopup.style.display = "block";
+        };
 
-    document.querySelector(".close-popup").onclick = function () {
-    enquiryPopup.style.display = "none";
-    };
+        document.querySelector(".close-popup").onclick = function () {
+            enquiryPopup.style.display = "none";
+        };
 
-    window.onclick = function (e) {
-    if (e.target == enquiryPopup) {
-    enquiryPopup.style.display = "none";
-    }
-    };
+        window.onclick = function (e) {
+            if (e.target == enquiryPopup) {
+                enquiryPopup.style.display = "none";
+            }
+        };
 
-    document.getElementById("sendEmailBtn").onclick = function () {
+        document.getElementById("sendEmailBtn").onclick = function () {
 
-    const message = document.getElementById("enquiryMessage").value.trim();
+            const message = document.getElementById("enquiryMessage").value.trim();
 
-    if(message === ""){
-    alert("Please enter your enquiry.");
-    return;
-    }
+            if (message === "") {
+                alert("Please enter your enquiry.");
+                return;
+            }
 
-    const subject = "Product Enquiry";
+            const subject = "Product Enquiry";
 
-    const body =
-    `Hello Alive Group,
+            const body =
+                `Hello Alive Group,
 
-    ${message}
+        ${message}
 
-    enquiry sent via www.alivegroup.co.in
-    `;
+        enquiry sent via www.alivegroup.co.in
+        `;
 
-    window.location.href =
-    "mailto:alivesolution@gmail.com"
-    + "?subject=" + encodeURIComponent(subject)
-    + "&body=" + encodeURIComponent(body);
-    };
+            window.location.href =
+                "mailto:alivesolution@gmail.com"
+                + "?subject=" + encodeURIComponent(subject)
+                + "&body=" + encodeURIComponent(body);
+        };
 
     </script>
 </body>
