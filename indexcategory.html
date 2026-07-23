@@ -331,7 +331,7 @@
                                                     <td>${item.description}</td>
                                                     <td>${item.rate}/-</td>
                                                     <td>
-                                                    <button class="btn btn-primary"
+                                                    <button class="btn btn-primary" style="background-color:#0056b3; border-color:#f1f1f1;"
                                     onclick='addToEstimation(${JSON.stringify(item)})'>
                                     Add
                                 </button>
@@ -344,7 +344,7 @@
             const layoutClass = mainProduct.image ? "product-layout" : "product-layout no-image";
             const imageHtml = mainProduct.image
                 ? `
-                                              <div class="product-image">
+                                              <div class="product-image" style="background-color:#f1f1f1;">
                                                 <img src="images/products/${mainProduct.image}" alt="#"
                                                     class="img-fluid rounded shadow" style="max-height:400px; object-fit:contain;">
                                               </div>

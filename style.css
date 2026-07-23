@@ -1467,3 +1467,8 @@ nav ul li a {
         margin-left: 0;
     }
 }
+
+
+.table-dark th {
+    background-color: #0056b3 !important;
+}
