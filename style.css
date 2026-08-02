@@ -14,11 +14,12 @@ html{
     scroll-behavior:smooth;
 }
 
-body{
-    font-family:'Poppins',sans-serif;
-    color:#333;
-    background:#fff;
-    line-height:1.6;
+body {
+    font-family: 'Poppins',sans-serif;
+    color: #333;
+    background: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
 /* ===========================
@@ -125,8 +126,12 @@ nav ul li a:hover{
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background: url("images/banner.png") center center/cover no-repeat;
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    background: url("images/banner.png") no-repeat center center;
     padding: 80px 0;
+    background-size: cover;
+    overflow: hidden;
 }
 
     .hero .container {
@@ -784,6 +789,13 @@ nav ul li{
 
 }
 
+    .hero {
+        min-height: 75vh;
+        justify-content: center;
+        background-position: center center;
+    }
+
+
 }
 
 /* ==========================================
@@ -854,8 +866,11 @@ nav ul li{
 
 
     .hero {
-        min-height: 70vh;
-        background-position: center;
+        min-height: 60vh;
+        /* Move image slightly right */
+        background-position: 60% center;
+        /* Optional if your image is narrow */
+        background-size: cover;
     }
 
         .hero .container {
@@ -916,7 +931,7 @@ nav ul li{
 
 .hero-content p{
 
-    font-size:15px;
+    font-size:19px;
 
 }
 
